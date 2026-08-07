@@ -1,6 +1,9 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": { "noEmit": true },
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ES2020"
+  },
   "include": [
     "client/src/core-demo-main.tsx",
     "client/src/features/vedana-core/**/*.ts",
