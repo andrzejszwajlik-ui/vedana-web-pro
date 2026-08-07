@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import DashboardPage from "./pages/Dashboard";
 import PatientPortalPage from "./pages/PatientPortal";
 import BookingPage from "./pages/BookingPage";
+import VedanaCorePage from "./features/vedana-core/VedanaCorePage";
 
 function Router() {
   const { user, loading } = useAuth();
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/booking" component={BookingPage} />
       <Route path="/portal" component={PatientPortalPage} />
+      <Route path="/vedana-core" component={VedanaCorePage} />
       
       {/* Protected routes */}
       {user && (

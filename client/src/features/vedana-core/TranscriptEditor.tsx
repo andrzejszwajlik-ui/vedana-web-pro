@@ -1,0 +1,2 @@
+import { Textarea } from "@/components/ui/textarea";
+export function TranscriptEditor({ value, onChange }: { value: string; onChange: (v: string) => void }) { return <div><label className="mb-2 block text-sm font-medium text-slate-700" htmlFor="transcript">Bieżąca transkrypcja</label><Textarea id="transcript" rows={7} value={value} onChange={e => onChange(e.target.value)} placeholder="Mów lub wpisuj przebieg wizyty…" className="resize-y bg-white text-base leading-relaxed" /></div>; }
