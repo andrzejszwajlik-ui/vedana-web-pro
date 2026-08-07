@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ES2020"
+  },
+  "include": [
+    "client/src/core-demo-main.tsx",
+    "client/src/features/vedana-core/**/*.ts",
+    "client/src/features/vedana-core/**/*.tsx",
+    "client/src/components/ui/button.tsx",
+    "client/src/components/ui/input.tsx",
+    "client/src/components/ui/textarea.tsx",
+    "client/src/lib/utils.ts"
+  ]
+}

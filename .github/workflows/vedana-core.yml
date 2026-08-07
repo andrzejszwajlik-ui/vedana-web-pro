@@ -1,0 +1,19 @@
+name: Vedana Core
+
+on:
+  pull_request:
+
+jobs:
+  verify-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Disable unrelated legacy patch for isolated Core CI
+        run: node -e "const fs=require('fs'); const p=JSON.parse(fs.readFileSync('package.json','utf8')); if (p.pnpm?.patchedDependencies) delete p.pnpm.patchedDependencies; fs.writeFileSync('package.json', JSON.stringify(p,null,2)+'\n');"
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm test:core
+      - run: pnpm build:core
