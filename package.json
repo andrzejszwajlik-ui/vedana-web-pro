@@ -10,6 +10,9 @@
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",
+    "dev:core": "vite --config vite.core.config.ts",
+    "build:core": "tsc -p tsconfig.core.json --noEmit && vite build --config vite.core.config.ts",
+    "test:core": "vitest run --config vitest.core.config.ts",
     "db:push": "drizzle-kit generate && drizzle-kit migrate"
   },
   "dependencies": {
